@@ -1,0 +1,9 @@
+{"query":"{
+    characters {
+        results {
+            name
+            status
+            type
+        }
+    }
+}"

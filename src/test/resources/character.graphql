@@ -1,0 +1,9 @@
+query ($id: ID!){
+    character(id: $id) {
+        name,
+        status
+    }
+}
+
+
+#{"id":"2"}
