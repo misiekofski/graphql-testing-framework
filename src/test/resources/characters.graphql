@@ -1,4 +1,4 @@
-{"query":"{
+{
     characters {
         results {
             name
@@ -6,4 +6,4 @@
             type
         }
     }
-}"
+}

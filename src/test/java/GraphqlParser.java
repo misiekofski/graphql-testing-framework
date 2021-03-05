@@ -1,6 +1,12 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.testng.Assert;
+
+import java.io.FileNotFoundException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GraphqlParser {
     private GraphqlParser() {
@@ -9,12 +15,20 @@ public class GraphqlParser {
     public static String parseFile(String fileName) {
         try {
             Path filePath = Paths.get("src", "test", "resources", fileName);
-            String result = Files.readString(filePath).replace("\n", "\\n");
-            result = result + ", \"variables\":{}}";
-            return result;
+            String query = Files.readString(filePath);
+            Map<String, String> queryMap = new HashMap<>();
+            queryMap.put("query", query);
+
+            ObjectMapper mapper = new ObjectMapper();
+            return mapper.writeValueAsString(queryMap);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("GraphQL file not found by name:" + fileName);
+            Assert.fail();
             return null;
         }
+    }
+
+    public static String parseFileWithParams(String fileName, String... params) {
+        return "";
     }
 }
