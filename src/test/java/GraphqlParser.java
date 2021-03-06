@@ -12,7 +12,10 @@ public class GraphqlParser {
     private GraphqlParser() {
     }
 
-    //TODO: Allow user not to pass params as null, without overloading this method
+    public static String parseFile(String fileName) throws JsonProcessingException {
+        return parseFileWithParams(fileName, null);
+    }
+
     public static String parseFileWithParams(String fileName, Map<String, String> params) throws JsonProcessingException {
         String query;
         ObjectMapper mapper = new ObjectMapper();
