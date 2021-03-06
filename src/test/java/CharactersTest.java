@@ -2,7 +2,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.request;
 
 public class CharactersTest {
     @Test

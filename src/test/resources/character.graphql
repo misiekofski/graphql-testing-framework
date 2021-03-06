@@ -4,6 +4,3 @@ query ($id: ID!){
         status
     }
 }
-
-
-#{"id":"2"}

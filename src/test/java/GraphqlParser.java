@@ -1,6 +1,5 @@
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.testng.Assert;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
