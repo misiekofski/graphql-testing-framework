@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GraphqlParser {
@@ -16,7 +17,7 @@ public class GraphqlParser {
         return parseFileWithParams(fileName, null);
     }
 
-    public static String parseFileWithParams(String fileName, Map<String, String> params) throws JsonProcessingException {
+    public static <K, V> String parseFileWithParams(String fileName, Map<K, V> params) throws JsonProcessingException {
         String query;
         ObjectMapper mapper = new ObjectMapper();
 
